@@ -6,7 +6,7 @@ const Experience = () => {
     return (
         <section className='c-space my-20' id='work'>
             <div className="w-full text-white-600">
-                <h3 className='head-text'>My Work Experience</h3>
+                <h3 className='head-text'>My Experience</h3>
                 <div className="work-container">
                     <div className="work-canvas">
                         <Canvas></Canvas>
@@ -20,7 +20,7 @@ const Experience = () => {
                                         <div className="work-content_logo">
                                             <img className='w-full h-full' src={icon} alt="logo" />
                                         </div>
-                                        <div className="work-content_bar" /> {/* Displaying Connection between WORK EXPERIENCES */}
+                                        {/* <div className="work-content_bar" /> Displaying Connection between WORK EXPERIENCES */}
                                     </div>
 
                                     <div className="sm:p-5 px-2.5 py-5 ">

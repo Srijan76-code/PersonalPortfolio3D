@@ -77,7 +77,7 @@ const Navbar = () => {
     }, []);
 
     return (
-        <header className='fixed top-0 left-0 right-0 z-50 bg-black/90 ' >  {/* fixed header */}
+        <header className='fixed top-0 left-0 right-0 z-50 bg-black/95  border-b  border-y-black-600 ' >  {/* fixed header */}
             <div className="max-w-7xl mx-auto ">
                 <div className="flex items-center justify-between mx-auto c-space ">
                     <a href="/" className=' text-neutral-200 text-xl font-semibold  transition-colors '>

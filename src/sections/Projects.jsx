@@ -7,6 +7,11 @@ import { Center, OrbitControls } from '@react-three/drei'
 import CanvasLoader from "../components/CanvasLoader"
 import DemoComputer from '../components/DemoComputer'
 import { useThree } from "@react-three/fiber";
+import { motion } from 'framer-motion'
+import "react-vertical-timeline-component/style.min.css"
+
+import SectionWrapper from '../hoc/SectionWrapper'
+import { fadeIn, textVariant } from '../utils/motion'
 const Projects = () => {
     const Background = () => {
         const texture = useLoader(THREE.TextureLoader, "/assets/project_bg.jpg");
@@ -30,7 +35,16 @@ const Projects = () => {
         })
     }
     return (
-        <section className='c-space my-20' >
+        <motion.div className='c-space my-20' id="project"
+            variants={{
+                hidden: { scale: 0.8, opacity: 0 },
+                show: { scale: 1, opacity: 1, transition: { type: "spring", stiffness: 120 } }
+            }}
+            initial="hidden"
+            whileInView="show"
+            viewport={{ once: false, amount: 0.3 }}
+
+        >
             <p className='head-text' >My Projects</p>  {/* START OF PROJECT SECTION */}
 
             <div className="grid lg:grid-cols-2 grid-cols-1 mt-12 gap-5 w-full ">
@@ -98,10 +112,10 @@ const Projects = () => {
             </div>
 
 
-        </section>
+        </motion.div>
 
 
     )
 }
 
-export default Projects
+export default SectionWrapper(Projects, "project")

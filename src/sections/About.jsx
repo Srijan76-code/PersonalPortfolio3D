@@ -6,6 +6,12 @@ import Button from "../components/Button";
 
 import AtomModel from "../components/Electron";
 import RotatingGlobe from "../components/Globe";
+import { VerticalTimeline, VerticalTimelineElement } from 'react-vertical-timeline-component'
+import { motion } from 'framer-motion'
+import "react-vertical-timeline-component/style.min.css"
+
+import SectionWrapper from '../hoc/SectionWrapper'
+import { fadeIn, textVariant } from '../utils/motion'
 
 const About = () => {
     const [hasCopied, setHasCopied] = useState(false);
@@ -61,7 +67,18 @@ const About = () => {
             <div className="grid xl:grid-cols-3 xl:grid-rows-6 md:grid-cols-2 grid-cols-1 gap-5 h-full">
 
                 {/* ABOUT SECTION */}
-                <div className="col-span-1 xl:row-span-3 bento-item">
+                <motion.div
+
+                    variants={{
+                        hidden: { x: -100, opacity: 0 },
+                        show: { x: 0, opacity: 1, transition: { type: "spring", stiffness: 100 } }
+                    }}
+                    initial="hidden"
+                    whileInView="show"
+                    viewport={{ once: false, amount: 0.3 }}
+
+
+                    className="col-span-1 xl:row-span-3 bento-item">
                     <div
                         className="grid-container toolCard"
                         ref={(el) => (cardRefs.current[0] = el)}
@@ -70,60 +87,99 @@ const About = () => {
                         <div>
                             <p className="grid-headtext">Hi, I'm Srijan Patel</p>
                             <p className="grid-subtext">Aspiring Fullstack Developer with experience in multiple Projects . Solved 150+ problems on both LeetCode (1500+ rating)
-                            and Codeforces (1050+ rating ).</p>
+                                and Codeforces (1050+ rating ).</p>
                         </div>
                     </div>
-                </div>
+                </motion.div>
 
                 {/* TECH STACK SECTION */}
-                <div className="col-span-1 xl:row-span-3">
+                <motion.div
+
+                    variants={{
+                        hidden: { x: -100, opacity: 0 },
+                        show: { x: 0, opacity: 1, transition: { type: "spring", stiffness: 100 } }
+                    }}
+                    initial="hidden"
+                    whileInView="show"
+                    viewport={{ once: false, amount: 0.3 }}
+
+
+
+                    className="col-span-1 xl:row-span-3">
                     <div
                         className="grid-container toolCard"
                         ref={(el) => (cardRefs.current[1] = el)}
                     >
-                        <img className=" w-full  sm:h-[276px] h-fit object-contain" src="/assets/grid2.png" alt="grid-2" />
+                        <img className=" w-full  sm:h-[276px] h-fit object-contain" src="/assets/abouttech.png" alt="grid-2" />
 
                         <div>
                             <p className="grid-headtext">Tech Stack</p>
-                            <p className="grid-subtext">C++ | Python | Pandas | Numpy | JavaScript | React | Express JS | Tailwind 
+                            <p className="grid-subtext">C++ | Python | Pandas | Numpy | JavaScript | React | Express JS | Tailwind | React-Fiber | Framer-Motion
                             </p>
                         </div>
                     </div>
-                </div>
+                </motion.div>
 
                 {/* CONTACT ME SECTION */}
-                <div className="col-span-1 xl:row-span-4 pointer-events-auto  ">
+                <motion.div
+                    variants={{
+                        hidden: { x: -100, opacity: 0 },
+                        show: { x: 0, opacity: 1, transition: { type: "spring", stiffness: 100 } }
+                    }}
+                    initial="hidden"
+                    whileInView="show"
+                    viewport={{ once: false, amount: 0.3 }}
+
+                    className="col-span-1 xl:row-span-4 pointer-events-auto  ">
                     <div
                         className="grid-container toolCard"
                         ref={(el) => (cardRefs.current[2] = el)}
                     >
                         <div className="rounded-3xl w-full sm:h-[326px] h-fit flex justify-center items-center  pointer-events-auto z-50 cursor-pointer">
-                           <RotatingGlobe />
+                            <RotatingGlobe />
                         </div>
                         <div className="pointer-events-auto z-50 cursor-pointer">
-                            <p className="grid-headtext">I work remotely across all timezones.</p>
-                            <p className="grid-subtext">I am based in Delhi, with remote work available.</p>
+                            <p className="grid-headtext">Available for Work </p>
+                            <p className="grid-subtext">I am currently a 1st year college student doing B.Tech in CS & AI in Newton School of Technology</p>
                             <Button name="Contact Me" isBeam containerClass="w-full mt-10" />
                         </div>
                     </div>
-                </div>
+                </motion.div>
 
                 {/* PASSION FOR CODING */}
-                <div className="col-span-2 xl:row-span-3">
+                <motion.div
+                    variants={{
+                        hidden: { x: -100, opacity: 0 },
+                        show: { x: 0, opacity: 1, transition: { type: "spring", stiffness: 100 } }
+                    }}
+                    initial="hidden"
+                    whileInView="show"
+                    viewport={{ once: false, amount: 0.3 }}
+
+                    className="col-span-2 xl:row-span-3">
                     <div
                         className="grid-container toolCard"
                         ref={(el) => (cardRefs.current[3] = el)}
                     >
                         <img className="w-full sm:h-[266px] h-fit object-contain" src="/assets/grid3.png" alt="grid-3" />
                         <div>
-                            <p className="grid-headtext">My Passion for Coding</p>
-                            <p className="grid-subtext">I love solving problems and building things through code.</p>
+                            <p className="grid-headtext">More About Me</p>
+                            <p className="grid-subtext">I love solving challenging problems on LeetCode & Codeforces and bringing ideas to life with React, 3.js, React Fiber, Framer Motion, and more. Whether it’s cracking a tough algorithm or building smooth, interactive UIs, I’m always pushing my limits and learning something new. </p>
                         </div>
                     </div>
-                </div>
+                </motion.div>
 
                 {/* EMAIL COPY SECTION */}
-                <div className="col-span-1 xl:row-span-2 pointer-events-auto z-50 cursor-pointer ">
+                <motion.div
+                    variants={{
+                        hidden: { x: -100, opacity: 0 },
+                        show: { x: 0, opacity: 1, transition: { type: "spring", stiffness: 100 } }
+                    }}
+                    initial="hidden"
+                    whileInView="show"
+                    viewport={{ once: false, amount: 0.3 }}
+
+                    className="col-span-1 xl:row-span-2 pointer-events-auto z-50 cursor-pointer ">
                     <div
                         className="grid-container toolCard"
                         ref={(el) => (cardRefs.current[4] = el)}
@@ -143,11 +199,11 @@ const About = () => {
                             </div>
                         </div>
                     </div>
-                </div>
+                </motion.div>
 
             </div>
         </section>
     );
 };
 
-export default About;
+export default SectionWrapper(About, "about");

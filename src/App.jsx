@@ -14,6 +14,7 @@ import ParticleCloudScene from './components/ParticleCloudScene'
 import Experience from './sections/Experience'
 import BlackHoleScene from './components/BlackHole'
 import Scene from './components/Scene'
+import Experience2 from './sections/Experience2'
 
 const App = () => {
  
@@ -23,7 +24,8 @@ const App = () => {
       <Hero2 />
       <About />
       <Projects />
-      <Experience/>
+      <Experience2/>
+      {/* <Experience/> */}
       <Contact/>
       <Footer/>
       {/* <Scene/> */}

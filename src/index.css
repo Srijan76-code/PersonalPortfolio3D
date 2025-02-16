@@ -12,6 +12,80 @@ body {
   background: #010103;
   font-family: 'General Sans', sans-serif;
 }
+/* EXPERIENCE CSS */
+
+/* From Uiverse.io by PhyoTP */ 
+.book {
+  position: relative;
+  border-radius: 10px;
+  left:-60px;
+  width: 500px;
+  height: 300px;
+  background-color: dark;
+  -webkit-box-shadow: 1px 1px 12px #000;
+  box-shadow: 1px 1px 12px #000;
+  -webkit-transform: preserve-3d;
+  -ms-transform: preserve-3d;
+  transform: preserve-3d;
+  -webkit-perspective: 2000px;
+  perspective: 2000px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  color: #000;
+  padding: 10px;
+}
+
+.cover {
+  top: 0;
+  position: absolute;
+  background-color: black;
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
+  cursor: pointer;
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
+  -webkit-transform-origin: 0;
+  -ms-transform-origin: 0;
+  transform-origin: 0;
+  -webkit-box-shadow: 1px 1px 12px #000;
+  box-shadow: 20px 20px 80px #1c1c1c;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.book:hover .cover {
+  -webkit-transition: all 0.5s;
+  transition: all 0.5s;
+  -webkit-transform: rotatey(-90deg);
+  -ms-transform: rotatey(-90deg);
+  transform: rotatey(-90deg);
+}
+
+.img {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+}
+
+
+
+
 /* NAVBAR LINKS CSS OF BORDER */
 .media-object {
   color: white;
@@ -185,7 +259,7 @@ html *::before {
   }
 
   .text-gray_gradient {
-    @apply bg-gradient-to-r from-[#BEC1CF] from-60% via-[#D5D8EA] via-60% to-[#D5D8EA] to-100% bg-clip-text text-transparent;
+    @apply bg-gradient-to-r from-amber-50 from-60% via-amber-100 via-60% to-[#D5D8EA] to-100% bg-clip-text text-transparent;
   }
 
   /* button component */
@@ -276,15 +350,15 @@ html *::before {
   }
 
   .field-label {
-    @apply text-lg text-white-600;
+    @apply text-xl py-1 text-white font-extralight ;
   }
 
   .field-input {
-    @apply w-full bg-black-300 px-5 py-2 min-h-14 rounded-lg placeholder:text-white-500 text-lg text-white-800 shadow-black-200 shadow-2xl focus:outline-none;
+    @apply w-full bg-black-200 px-5 py-2 min-h-14 rounded-lg placeholder:text-white-500 text-lg text-white-800 font-extralight shadow-black-200 shadow-2xl focus:outline-none;
   }
 
   .field-btn {
-    @apply bg-black-500 px-5 py-2 min-h-12 rounded-lg shadow-black-200 shadow-2xl flex justify-center items-center text-lg text-white gap-3;
+    @apply bg-black-100  px-5 py-2 min-h-12 rounded-lg  flex justify-center items-center text-lg text-white gap-3;
   }
 
   .field-btn_arrow {
