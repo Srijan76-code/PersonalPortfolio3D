@@ -67,7 +67,7 @@ export const myProjects = [
     desc: 'CODIFY is the ultimate progress tracker for competitive programmers. Analyze your coding journey, identify strengths and weaknesses, and push your problem-solving skills to the next level.',
     subdesc:
       'With intuitive dashboards, real-time insights, and detailed performance breakdowns, it helps you stay ahead in the coding game—whether you’re preparing for interviews or mastering algorithms.',
-    href: 'https://www.youtube.com/watch?v=lEflo_sc82g',
+    href: 'https://srijan76-code.github.io/LEETCODE-METRIC/',
     texture: '/textures/project/project3.mp4',
     logo: '/assets/project-logo4.png',
     logoStyle: {
@@ -104,7 +104,7 @@ export const myProjects = [
     desc: 'A fun, fast, and interactive take on the legendary Rock, Paper, Scissors game. Play against AI, test your luck, and experience smooth gameplay with crisp animations.',
     subdesc:
       'Built entirely with JavaScript, this game delivers a seamless experience with responsive UI, randomized AI moves, and a clean, engaging interface—no extra frameworks, just pure JS magic!',
-   href: 'https://www.youtube.com/watch?v=zfAb95tJvZQ',
+   href: 'https://srijan76-code.github.io/Rock-Paper-and-Scissors/',
     texture: '/textures/project/project1.mp4',
     logo: '/assets/project-logo1.png',
     logoStyle: {
@@ -142,7 +142,7 @@ export const myProjects = [
     subdesc:
       'Built with React, Ollama, DeepSeek-Coder 1.3B, DeepSeek-R1, and Phi, VYNE AI ensures a seamless experience for developers. The project focuses on improving JSON readability, displaying code blocks efficiently, and delivering an intuitive user experience.',
     href: 'https://your-vyne-ai-link.com', // Replace with your actual link
-    href: 'https://www.youtube.com/watch?v=Ahwoks_dawU',
+    href: '#',
     texture: '/textures/project/project5.mp4',
     logo: '/assets/project-logo5.png',
     logoStyle: {
@@ -180,7 +180,7 @@ export const myProjects = [
     subdesc:
       'Built with cutting-edge AI, ANIMEFEELS personalizes your anime journey with smart recommendations, interactive discussions, and exclusive content. Whether you’re a casual watcher or a hardcore otaku, this is where anime truly comes to life.',
 
-    href: 'https://www.youtube.com/watch?v=PuOVqP_cjkE',
+    href: '#',
     texture: '/textures/project/project4.mp4',
     logo: '/assets/project-logo4.png',
     logoStyle: {
@@ -218,7 +218,7 @@ export const myProjects = [
     subdesc:
       'Built with React.js, Firebase, and AI-driven analytics, this platform ensures students get the right content at the right time, bridging skill gaps and making learning more engaging, efficient, and result-driven.',
 
-    href: 'https://www.youtube.com/watch?v=y5vE8y_f_OM',
+    href: '#',
     texture: '/textures/project/project2.mp4',
     logo: '/assets/project-logo2.png',
     logoStyle: {
