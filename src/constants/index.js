@@ -80,7 +80,7 @@ export const myProjects = [
       {
         id: 1,
         name: 'HTML',
-        path: '/assets/html.png',
+        path: '/assets/html.svg',
       },
       {
         id: 2,
@@ -117,7 +117,7 @@ export const myProjects = [
       {
         id: 1,
         name: 'HTML',
-        path: '/assets/html.png',
+        path: '/assets/html.svg',
       },
       {
         id: 2,
