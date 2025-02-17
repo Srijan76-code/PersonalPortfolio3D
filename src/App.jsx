@@ -15,6 +15,7 @@ import Experience from './sections/Experience'
 import BlackHoleScene from './components/BlackHole'
 import Scene from './components/Scene'
 import Experience2 from './sections/Experience2'
+import Hero3 from './sections/Hero3'
 
 const App = () => {
  
@@ -22,21 +23,12 @@ const App = () => {
     <main className='max-w-7xl mx-auto' >
       <Navbar />
       <Hero2 />
+      <Hero3/>
       <About />
       <Projects />
       <Experience2/>
-      {/* <Experience/> */}
       <Contact/>
       <Footer/>
-      {/* <Scene/> */}
-      {/* <BlackHoleScene/> */}
-      {/* <div className="min-w-screen h-[600px]">
-      <ParticleCloudScene/>
-      </div> */}
-    
-   
-      
-      
     </main>
 
   )

@@ -11,7 +11,7 @@ import { motion } from 'framer-motion'
 import "react-vertical-timeline-component/style.min.css"
 
 import SectionWrapper from '../hoc/SectionWrapper'
-import { fadeIn, textVariant } from '../utils/motion'
+
 const Projects = () => {
     const Background = () => {
         const texture = useLoader(THREE.TextureLoader, "/assets/project_bg.jpg");
@@ -38,7 +38,7 @@ const Projects = () => {
         <motion.div className='c-space my-20' id="project"
             variants={{
                 hidden: { scale: 0.8, opacity: 0 },
-                show: { scale: 1, opacity: 1, transition: { type: "spring", stiffness: 120 } }
+                show: { scale: 1, opacity: 1, transition: { type: "spring", stiffness: 100 } }
             }}
             initial="hidden"
             whileInView="show"

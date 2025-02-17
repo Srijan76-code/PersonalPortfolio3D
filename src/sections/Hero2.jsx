@@ -16,7 +16,7 @@ const Hero2 = () => {
   }
 
   return (
-    <div className="w-full h-[500px] mt-64" id='home' onMouseMove={handleMouseMove}>
+    <div className="w-full h-[400px] mt-64" id='home' onMouseMove={handleMouseMove}>
       <Canvas>
         <AtomModel mousePosition={mousePosition} />
         {/* <BlackHole mousePosition={mousePosition} /> */}
