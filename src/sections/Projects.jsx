@@ -100,7 +100,7 @@ const Projects = () => {
 
                         <Center>    {/*  It centers the 3D MODEL ...*/}
                             <Suspense fallback={<CanvasLoader />} >    {/*  It shows SOMETHING, while 3D Modle is loading ...*/}
-                                <group scale={2} position={[0, -3, 0]} rotation={[0, -0, 1, 0]} >
+                                <group scale={2.4} position={[-0.3, -3.6, 0.6]} rotation={[0, -0, 1, 0]} >
                                     <DemoComputer texture={currentProject.texture} />
                                     {/*  Passing TEXTURE as a PROP to 3D MODEL , so that , WE can switch to different models ...*/}
                                 </group>

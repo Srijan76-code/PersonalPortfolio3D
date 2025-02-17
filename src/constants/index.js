@@ -68,7 +68,7 @@ export const myProjects = [
     subdesc:
       'With intuitive dashboards, real-time insights, and detailed performance breakdowns, it helps you stay ahead in the coding game—whether you’re preparing for interviews or mastering algorithms.',
     href: 'https://srijan76-code.github.io/LEETCODE-METRIC/',
-    texture: '/textures/project/project3.mp4',
+    texture: '/textures/project/project2.mp4',
     logo: '/assets/project-logo4.png',
     logoStyle: {
       backgroundColor: '#0E1F38',
@@ -79,8 +79,8 @@ export const myProjects = [
     tags: [
       {
         id: 1,
-        name: 'React.js',
-        path: '/assets/react.svg',
+        name: 'HTML',
+        path: '/assets/html.png',
       },
       {
         id: 2,
@@ -89,8 +89,8 @@ export const myProjects = [
       },
       {
         id: 3,
-        name: 'TypeScript',
-        path: '/assets/typescript.png',
+        name: 'JavaScript',
+        path: '/assets/icons8-javascript.svg',
       },
       {
         id: 4,
@@ -106,13 +106,51 @@ export const myProjects = [
       'Built entirely with JavaScript, this game delivers a seamless experience with responsive UI, randomized AI moves, and a clean, engaging interface—no extra frameworks, just pure JS magic!',
    href: 'https://srijan76-code.github.io/Rock-Paper-and-Scissors/',
     texture: '/textures/project/project1.mp4',
-    logo: '/assets/project-logo1.png',
+    logo: '/assets/rock.png',
     logoStyle: {
       backgroundColor: '#2A1816',
       border: '0.2px solid #36201D',
       boxShadow: '0px 0px 60px 0px #AA3C304D',
     },
     spotlight: '/assets/spotlight1.png',
+    tags: [
+      {
+        id: 1,
+        name: 'HTML',
+        path: '/assets/html.png',
+      },
+      {
+        id: 2,
+        name: 'TailwindCSS',
+        path: 'assets/tailwindcss.png',
+      },
+      {
+        id: 3,
+        name: 'JavaScript',
+        path: '/assets/icons8-javascript.svg',
+      },
+      {
+        id: 4,
+        name: 'Framer Motion',
+        path: '/assets/framer.png',
+      },
+    ],
+  },
+  {
+    title: 'EdTech AI - Personalized Learning Redefined ',
+    desc: '[In Progress ...30%] A game-changing AI-powered EdTech platform that adapts to every student’s unique learning pace and skills. Say goodbye to one-size-fits-all education —get personalized resources, challenges, and growth tracking in real time.',
+    subdesc:
+      'Built with React.js, Firebase, and AI-driven analytics, this platform ensures students get the right content at the right time, bridging skill gaps and making learning more engaging, efficient, and result-driven.',
+
+    href: '#',
+    texture: '/textures/project/project4.mp4',
+    logo: '/assets/project-logo2.png',
+    logoStyle: {
+      backgroundColor: '#13202F',
+      border: '0.2px solid #17293E',
+      boxShadow: '0px 0px 60px 0px #2F6DB54D',
+    },
+    spotlight: '/assets/spotlight2.png',
     tags: [
       {
         id: 1,
@@ -136,6 +174,8 @@ export const myProjects = [
       },
     ],
   },
+
+  
   {
     title: 'VYNE AI - Coding Buddy ',
     desc: '[In Progress...70%] VYNE AI is an advanced AI-powered assistant designed to assist learners, coders and  developers with coding queries, debugging, and learning new technologies effortlessly. It enhances productivity by providing accurate, context-aware solutions in real time.',
@@ -181,7 +221,7 @@ export const myProjects = [
       'Built with cutting-edge AI, ANIMEFEELS personalizes your anime journey with smart recommendations, interactive discussions, and exclusive content. Whether you’re a casual watcher or a hardcore otaku, this is where anime truly comes to life.',
 
     href: '#',
-    texture: '/textures/project/project4.mp4',
+    texture: '/textures/project/project3.mp4',
     logo: '/assets/project-logo4.png',
     logoStyle: {
       backgroundColor: '#0E1F38',
@@ -212,46 +252,7 @@ export const myProjects = [
       },
     ],
   },
-  {
-    title: 'EdTech AI - Personalized Learning Redefined ',
-    desc: '[In Progress ...30%] A game-changing AI-powered EdTech platform that adapts to every student’s unique learning pace and skills. Say goodbye to one-size-fits-all education —get personalized resources, challenges, and growth tracking in real time.',
-    subdesc:
-      'Built with React.js, Firebase, and AI-driven analytics, this platform ensures students get the right content at the right time, bridging skill gaps and making learning more engaging, efficient, and result-driven.',
 
-    href: '#',
-    texture: '/textures/project/project2.mp4',
-    logo: '/assets/project-logo2.png',
-    logoStyle: {
-      backgroundColor: '#13202F',
-      border: '0.2px solid #17293E',
-      boxShadow: '0px 0px 60px 0px #2F6DB54D',
-    },
-    spotlight: '/assets/spotlight2.png',
-    tags: [
-      {
-        id: 1,
-        name: 'React.js',
-        path: '/assets/react.svg',
-      },
-      {
-        id: 2,
-        name: 'TailwindCSS',
-        path: 'assets/tailwindcss.png',
-      },
-      {
-        id: 3,
-        name: 'TypeScript',
-        path: '/assets/typescript.png',
-      },
-      {
-        id: 4,
-        name: 'Framer Motion',
-        path: '/assets/framer.png',
-      },
-    ],
-  },
-
-  
   
 ];
 
