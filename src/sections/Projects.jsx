@@ -35,10 +35,10 @@ const Projects = () => {
         })
     }
     return (
-        <motion.div className='c-space my-20' id="project"
+        <motion.div className='c-space my-52 ' id="project"
             variants={{
                 hidden: { scale: 0.8, opacity: 0 },
-                show: { scale: 1, opacity: 1, transition: { type: "spring", stiffness: 100 } }
+                show: { scale: 1, opacity: 1, transition: { type: "tween", stiffness: 100 } }
             }}
             initial="hidden"
             whileInView="show"
@@ -47,7 +47,7 @@ const Projects = () => {
         >
             <p className='head-text' >My Projects</p>  {/* START OF PROJECT SECTION */}
 
-            <div className="grid lg:grid-cols-2 grid-cols-1 mt-12 gap-5 w-full ">
+            <div className="grid  lg:grid-cols-2 grid-cols-1 mt-12 gap-5 w-full ">
                 <div className="flex flex-col gap-5 relative sm:p-10 py-10 px-5 shadow-2xl shadow-black-200">
                     <div className="absolute top-0 right-0">
                         {/* A NICE TOP SPOTLIGHT */}
@@ -56,7 +56,7 @@ const Projects = () => {
                     <div className="p-3 backdrop-filter backdrop-blur-3xl w-fit rounded-lg" style={currentProject.logoStyle} >
                         <img className='w-10 h-10 shadow-sm ' src={currentProject.logo} alt="logo" /> {/* LOGO FOR OUR PROJECT*/}
                     </div>
-                    <div className="flex flex-col gap-5 text-white-600 my-5">
+                    <div className="flex h-80 flex-col gap-5 text-white-600 my-5">
                         <p className='text-white text-2xl font-semibold animatedText' >{currentProject.title}</p>
                         <p className='animatedText' >{currentProject.desc}</p>
                         <p className='animatedText' >{currentProject.subdesc}</p>
@@ -65,7 +65,7 @@ const Projects = () => {
 
                     {/* TECH STACK using MAP..... */}
 
-                    <div className="flex items-center justify-between flex-wrap gap-5">
+                    <div className="flex h-10 items-center justify-between flex-wrap gap-5">
                         <div className="flex items-center gap-3">
                             {currentProject.tags.map((tag, index) => (
                                 <div key={index} className='tech-logo' >
@@ -80,7 +80,7 @@ const Projects = () => {
                         </a>
                     </div>
 
-                    <div className="flex justify-between items-center mt-7 ">
+                    <div className="flex h-9 justify-between items-center mt-7 ">
                         <button className='arrow-btn' onClick={() => handleNavigation("previous")} >
                             <img src="/assets/left-arrow.png" alt="left arrow" className='w-4 h-4' />
                         </button>
@@ -91,7 +91,7 @@ const Projects = () => {
 
                 </div>
                 {/*  PROJECTS 3D-DEMO ## CANVAS from React Fiber :- A Connection between React and 3JS */}
-                <div className=" h-96 md:h-full ">
+                <div className=" md:h-full cursor-pointer  ">
 
                     <Canvas>
                         <Background />
@@ -100,13 +100,20 @@ const Projects = () => {
 
                         <Center>    {/*  It centers the 3D MODEL ...*/}
                             <Suspense fallback={<CanvasLoader />} >    {/*  It shows SOMETHING, while 3D Modle is loading ...*/}
-                                <group scale={2.4} position={[-0.3, -3.6, 0.6]} rotation={[0, -0, 1, 0]} >
+                                <group scale={2.7} position={[-0.4, -4.6, 0.6]} rotation={[0, -0.4, 1, 0]} >
                                     <DemoComputer texture={currentProject.texture} />
                                     {/*  Passing TEXTURE as a PROP to 3D MODEL , so that , WE can switch to different models ...*/}
                                 </group>
                             </Suspense>
                         </Center>
-                        <OrbitControls maxPolarAngle={Math.PI / 2} enableZoom={false} />
+                        <OrbitControls
+                            enableZoom={true}
+                            minDistance={4}  // Minimum zoom distance
+                            maxDistance={10} // Maximum zoom distance
+                            zoomSpeed={0.1}  // Control zoom speed
+                            maxPolarAngle={Math.PI / 2}  // Restrict vertical rotation (prevents flipping)
+                            minPolarAngle={0} // Restrict camera from going below ground
+                        />
                     </Canvas>
                 </div>
             </div>

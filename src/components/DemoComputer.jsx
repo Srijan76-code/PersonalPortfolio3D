@@ -17,7 +17,9 @@ const txt=useVideoTexture(props.texture?props.texture: "/textures/project/projec
 // ADDING ANIMATION TO 3D MODEL's PROJECT DISPLAYING VIDEOS:-
 
 useEffect(()=>{
-    if (txt)  txt.flipY=false
+    if (txt)  
+      txt.flipY=false;
+    txt.needsUpdate = true;
 },[txt])
 
 useGSAP(()=>{

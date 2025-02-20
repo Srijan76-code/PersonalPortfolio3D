@@ -14,7 +14,7 @@ body {
 }
 /* EXPERIENCE CSS */
 
-/* From Uiverse.io by PhyoTP */ 
+
 .book {
   position: relative;
   border-radius: 10px;
@@ -182,7 +182,8 @@ html *::before {
   overflow: hidden;
   transition: transform 0.2s ease-out;
   transform-style: preserve-3d;
-  /* border: 5px solid ; */
+  /* border: 2px solid #111111 ; */
+  box-shadow: 0px 4px 14px rgb(29, 29, 29);
 }
 
 
@@ -346,7 +347,7 @@ html *::before {
 
   /* contact section */
   .contact-container {
-    @apply max-w-xl relative z-10 sm:px-10 px-5 mt-12;
+    @apply max-w-xl relative z-10 sm:px-10 px-5 mt-12  ;
   }
 
   .field-label {
@@ -354,7 +355,7 @@ html *::before {
   }
 
   .field-input {
-    @apply w-full bg-black-200 px-5 py-2 min-h-14 rounded-lg placeholder:text-white-500 text-lg text-white-800 font-extralight shadow-black-200 shadow-2xl focus:outline-none;
+    @apply w-full bg-black-300 px-5 py-2 min-h-14 rounded-lg placeholder:text-white-500 text-lg text-white-800 font-extralight shadow-black-200 shadow-2xl focus:outline-none;
   }
 
   .field-btn {

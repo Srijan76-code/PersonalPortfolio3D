@@ -1,71 +1,62 @@
-// src/components/BlackHole.js
-import React, { useRef, useState, useEffect } from 'react';
-import { Canvas, useFrame } from '@react-three/fiber';
-import { OrbitControls, Stars } from '@react-three/drei';
-import { EffectComposer, Bloom } from '@react-three/postprocessing';
+import React, { useRef } from "react";
+import { useGLTF } from "@react-three/drei";
 
-function BlackHole() {
-    const ringRef = useRef();
-    const [lightning, setLightning] = useState(false);
+const Blackhole=(props)=> {
+    const { nodes, materials } = useGLTF('/models/black_hole.glb')
 
-    // Simulate lightning flashes
-    useEffect(() => {
-        const interval = setInterval(() => {
-            setLightning(true);
-            setTimeout(() => setLightning(false), 100); // Flash duration
-        }, 2000); // Flash interval
-        return () => clearInterval(interval);
-    }, []);
-
-    // Rotate the ring horizontally
-    useFrame(() => {
-        if (ringRef.current) {
-            ringRef.current.rotation.y += 0.01; // Rotate around the Y-axis
-        }
-    });
-
+    // Optimize geometry and materials
+    const meshes = useMemo(() => ([
+      { geometry: nodes.black_hole_black_hole_blackoutside_0.geometry, material: materials.black_hole_blackoutside },
+      { geometry: nodes.black_hole_black_hole_blackoutside_0_1.geometry, material: materials.black_hole_blackoutside },
+      { geometry: nodes.black_hole_black_hole_blackoutside_0_2.geometry, material: materials.black_hole_blackoutside },
+      { geometry: nodes.black_hole_black_hole_light3_0.geometry, material: materials.black_hole_light3 },
+      { geometry: nodes.black_hole_black_hole_light2_0.geometry, material: materials.black_hole_light2 },
+      { geometry: nodes.black_hole_black_hole_light1_0.geometry, material: materials.black_hole_light1 },
+      { geometry: nodes.black_hole_black_hole_distortion_0.geometry, material: materials.black_hole_distortion },
+      { geometry: nodes.black_hole_black_hole_center_0.geometry, material: materials.black_hole_center },
+    ]), [nodes, materials])
+  
+    const rings = useMemo(() => ([
+      { geometry: nodes.black_hole_ring_ring_0.geometry, material: materials.ring },
+      { geometry: nodes.black_hole_ring_ring2_0.geometry, material: materials.ring2 },
+      { geometry: nodes.black_hole_ring_ring2_0_1.geometry, material: materials.ring2 },
+      { geometry: nodes.black_hole_ring_ring2_0_2.geometry, material: materials.ring2 },
+      { geometry: nodes.black_hole_ring_ring2_0_3.geometry, material: materials.ring2 },
+    ]), [nodes, materials])
+  
     return (
-        <group>
-            {/* Black Hole Sphere */}
-            <mesh position={[0, 0, 0]}>
-                <sphereGeometry args={[2, 32, 32]} />
-                <meshStandardMaterial 
-                    color="black" 
-                    emissive="black" 
-                    roughness={0.5} 
-                    metalness={1} // Adds glossiness
-                />
-            </mesh>
-
-            {/* Flat Ring Structure */}
-            <mesh ref={ringRef} position={[0, 0, 0]} rotation={[Math.PI / 2, 0, 0]}>
-                <torusGeometry args={[3, 0.1, 35, 100]} /> {/* Flat and wide ring */}
-                <meshStandardMaterial 
-                    color={lightning ? "#ffffff" : "#1a1a1a"} // Flash effect
-                    emissive={lightning ? "#ffffff" : "#555555"} // Glow during lightning
-                    roughness={0.2} // Less roughness for glossiness
-                    metalness={0.9} // Metallic look
-                    transparent={true}
-                    opacity={0.9} // Slightly transparent
-                />
-            </mesh>
-
-            {/* Background Stars */}
-            <Stars radius={100} depth={50} count={5000} factor={4} saturation={0} fade speed={1} />
+      <group {...props} dispose={null}>
+        {/* Core Black Hole */}
+        <group rotation={[-Math.PI / 2, -0.375, 0]}>
+          <group rotation={[Math.PI / 2, 0, 0]} scale={0.01}>
+            <group rotation={[-Math.PI / 2, 0, 0]} scale={100}>
+              {meshes.map(({ geometry, material }, index) => (
+                <mesh key={index} castShadow receiveShadow geometry={geometry} material={material} />
+              ))}
+            </group>
+  
+            {/* Rings around the Black Hole */}
+            <group rotation={[-Math.PI / 2, 0, 0]} scale={100}>
+              {rings.map(({ geometry, material }, index) => (
+                <mesh key={`ring-${index}`} castShadow receiveShadow geometry={geometry} material={material} />
+              ))}
+            </group>
+  
+            {/* Planet (Optional) */}
+            <mesh
+              castShadow receiveShadow
+              geometry={nodes.Planet_Planet_0.geometry}
+              material={materials.Planet}
+              position={[30802.896, 2286.717, 136477.797]}
+              rotation={[-Math.PI / 2, 0, 0]}
+              scale={100}
+            />
+          </group>
         </group>
-    );
-}
+      </group>
+    )
+  }
+  
 
-export default function BlackHoleScene() {
-    return (
-        <Canvas style={{ background: 'black', width: '100vw', height: '100vh' }}>
-            <ambientLight intensity={0.5} />
-            <pointLight position={[10, 10, 10]} intensity={1} />
-            <OrbitControls enableZoom={true} />
-            <BlackHole />
-            <EffectComposer>
-                <Bloom intensity={1.5} /> {/* Enhanced glow */}
-            </EffectComposer>
-        </Canvas>
-    );
-}
+useGLTF.preload("/models/black_hole.glb");
+export default Blackhole
